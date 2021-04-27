@@ -1,20 +1,24 @@
 package com.yana.microservices.camelmicroservicesa.routes.dbconnection;
-import javax.xml.XMLConstants;
-import javax.xml.transform.Source;
-import javax.xml.transform.stream.StreamSource;
-import javax.xml.validation.*;
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 import org.springframework.stereotype.Component;
 import org.xml.sax.SAXException;
+
+import javax.xml.XMLConstants;
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
+import java.io.File;
 import java.io.IOException;
 
 @Component
 public class XmlValidator {
 
-    public void validate(){
+    public void validate() {
+
+
+
         File schemaFile = new File("C:\\Projects\\Json\\xsd\\schema.xsd"); // etc.
         {
             Source xmlFile = new StreamSource(new File("web.xml"));
@@ -27,15 +31,11 @@ public class XmlValidator {
                 System.out.println(xmlFile.getSystemId() + " is valid");
             } catch (SAXException e) {
                 System.out.println(xmlFile.getSystemId() + " is NOT valid reason:" + e);
-            } catch (IOException e) {}
+            } catch (IOException e) {
+            }
 
         }
     }
-
-
-
-
-
 
 
 }

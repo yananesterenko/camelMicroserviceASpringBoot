@@ -13,10 +13,9 @@ public class CallDB extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        //dbConnection.connection();
+        dbConnection.connection();
 
     }
-
 
 }
 
